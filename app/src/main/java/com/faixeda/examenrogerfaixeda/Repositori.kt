@@ -45,5 +45,21 @@ class Repositori {
             return productes
 
         }
+
+        fun modificarProducte(context: Context, nom : String, preu : Int){
+            repositori_database = initializeDB(context)
+
+            CoroutineScope(IO).launch {
+                repositori_database!!.producteDao().modificarProducte(nom , preu )
+            }
+        }
+
+        fun eliminarProducte(context: Context, nom : String, preu : Int){
+            repositori_database = initializeDB(context)
+
+            CoroutineScope(IO).launch {
+                repositori_database!!.producteDao().deleteProducte(nom , preu)
+            }
+        }
     }
 }

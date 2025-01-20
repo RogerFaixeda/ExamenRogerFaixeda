@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.faixeda.examenrogerfaixeda.R
 import com.faixeda.examenrogerfaixeda.data.Producte
 
 class VeureProductesAdapter(private val mList : List<Producte>)  : RecyclerView.Adapter<VeureProductesAdapter.ViewHolder>(){
-    //Llista d'items seleccionats
-//    private val selectedItems = mutableListOf <Alumne>() // Lista para almacenar los elementos seleccionados
-
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
@@ -33,8 +31,12 @@ class VeureProductesAdapter(private val mList : List<Producte>)  : RecyclerView.
         val producte = mList[position]
 
         holder.textViewNom.text = producte.nom
-        holder.textViewPreu.text = producte.preu.toString()
+        holder.textViewPreu.text = producte.preu.toString() + "€"
 
+
+        holder.itemView.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_fragmentVeureProductes_to_fragmentModificarProductes)
+        }
 
         //Aixo serveix per si volem fer-lo responsive amb una accio que seleccioni els
         // items i els faci canviar de color per veure quins estan seleccionats
@@ -48,6 +50,7 @@ class VeureProductesAdapter(private val mList : List<Producte>)  : RecyclerView.
 //                holder.itemView.setBackgroundColor(Color.LTGRAY) // Cambiar el fondo para indicar selección
 //            }
 //        }
+
     }
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {

@@ -8,4 +8,6 @@
     <string name="preu">Preu</string>
     <string name="tornar">Tornar</string>
     <string name="p_gina_de_contacte">Pàgina de Contacte</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="modificar">Modificar</string>
 </resources>
