@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentVeureProductes">
+    <fragment
+        android:id="@+id/afegirProductesFragment"
+        android:name="com.faixeda.examenrogerfaixeda.AfegirProductes.AfegirProductesFragment"
+        android:label="fragment_afegir_productes"
+        tools:layout="@layout/fragment_afegir_productes" >
+        <action
+            android:id="@+id/action_afegirProductesFragment_to_fragmentVeureProductes"
+            app:destination="@id/fragmentVeureProductes" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVeureProductes"
+        android:name="com.faixeda.examenrogerfaixeda.VeureProductes.FragmentVeureProductes"
+        android:label="fragment_veure_productes"
+        tools:layout="@layout/fragment_veure_productes" >
+        <action
+            android:id="@+id/action_fragmentVeureProductes_to_fragmentContacte"
+            app:destination="@id/fragmentContacte" />
+        <action
+            android:id="@+id/action_fragmentVeureProductes_to_afegirProductesFragment"
+            app:destination="@id/afegirProductesFragment" />
+        <action
+            android:id="@+id/action_fragmentVeureProductes_to_fragmentModificarProductes"
+            app:destination="@id/fragmentModificarProductes" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentModificarProductes"
+        android:name="com.faixeda.examenrogerfaixeda.ModificarProductes.FragmentModificarProductes"
+        android:label="fragment_modificar_productes"
+        tools:layout="@layout/fragment_modificar_productes" >
+        <action
+            android:id="@+id/action_fragmentModificarProductes_to_fragmentVeureProductes"
+            app:destination="@id/fragmentVeureProductes" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentContacte"
+        android:name="com.faixeda.examenrogerfaixeda.Contacte.FragmentContacte"
+        android:label="fragment_contacte"
+        tools:layout="@layout/fragment_contacte" >
+        <action
+            android:id="@+id/action_fragmentContacte_to_fragmentVeureProductes"
+            app:destination="@id/fragmentVeureProductes" />
+    </fragment>
+</navigation>

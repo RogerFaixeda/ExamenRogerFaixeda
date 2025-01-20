@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ExamenRogerFaixeda</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contacte">Contacte</string>
+    <string name="afegir">Afegir</string>
+    <string name="nom">Nom</string>
+    <string name="preu">Preu</string>
+    <string name="tornar">Tornar</string>
+    <string name="p_gina_de_contacte">Pàgina de Contacte</string>
 </resources>
