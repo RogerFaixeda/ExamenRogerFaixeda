@@ -15,6 +15,7 @@ interface ProducteDAO {
     @Query("SELECT * FROM Producte ORDER BY preu DESC")
     fun obtenirProducte(): LiveData<List<Producte>>
 
+    //No puc modificar pq no tinc el id
     @Query("UPDATE Producte SET preu = :preu AND nom = :nom WHERE nom = :nom AND preu = :preu")
     fun modificarProducte(nom : String, preu : Int)
 
