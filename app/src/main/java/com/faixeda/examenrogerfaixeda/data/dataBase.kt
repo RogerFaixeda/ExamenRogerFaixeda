@@ -29,20 +29,20 @@ abstract class dataBase : RoomDatabase(){
         }
 
         //        Aixo s'ha de fer servir per quan tingui feta la populacio de la base de dades
-//        private fun buildDatabase(context: Context): dataBase {
-//            return Room.databaseBuilder(
-//                context.applicationContext,
-//                dataBase::class.java,
-//                "alumnes_database"
-//            ).createFromAsset("databases/alumnes_database.db").build()
-//        }
-
-        fun buildDatabase(context: Context) : dataBase {
+        private fun buildDatabase(context: Context): dataBase {
             return Room.databaseBuilder(
                 context.applicationContext,
                 dataBase::class.java,
                 "productes_database"
-            ).build()
+            ).createFromAsset("databases/productes_database.db").build()
         }
+
+//        fun buildDatabase(context: Context) : dataBase {
+//            return Room.databaseBuilder(
+//                context.applicationContext,
+//                dataBase::class.java,
+//                "productes_database"
+//            ).build()
+//        }
     }
 }
